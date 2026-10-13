@@ -60,7 +60,7 @@ function PlaceDetail() {
     const { error } = isFav
       ? await supabase.from("favorites").delete().eq("place_id", place!.id).eq("user_id", user.id)
       : await supabase.from("favorites").insert({ place_id: place!.id, user_id: user.id });
-    if (error) return toast.error(error.message);
+    if (error) return void toast.error(error.message);
     qc.invalidateQueries({ queryKey: ["favorites"] });
   }
 

@@ -48,7 +48,7 @@ function Explore() {
     if (!query.trim()) return;
     const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&limit=1&q=${encodeURIComponent(query)}`);
     const data = await res.json();
-    if (!data[0]) return toast.error("Location not found");
+    if (!data[0]) return void toast.error("Location not found");
     setCenter([parseFloat(data[0].lat), parseFloat(data[0].lon)]);
   }
 
@@ -111,7 +111,7 @@ function Explore() {
         ) : (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {list.map(({ p, d }) => (
-              <PlaceCard key={p.id} place={p} distance={d} photo={urls[p.contributions[0]?.photo_url]} />
+              <PlaceCard key={p.id} place={p} distance={d} photo={urls[p.contributions[0]?.photo_url ?? ""]} />
             ))}
           </div>
         )}

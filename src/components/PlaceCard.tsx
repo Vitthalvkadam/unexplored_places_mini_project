@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { MapPin, Users } from "lucide-react";
 import { categoryLabel, contributorCount, formatDistance, MAX_CONTRIBUTORS, type Place } from "@/lib/places";
 
-export function PlaceCard({ place, photo, distance }: { place: Place; photo?: string; distance?: number }) {
+export function PlaceCard({ place, photo, distance }: { place: Place; photo?: string | undefined; distance?: number | undefined }) {
   return (
     <Link
       to="/places/$id"

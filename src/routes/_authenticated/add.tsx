@@ -49,7 +49,7 @@ function AddPlace() {
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
-    if (!user || !loc || !file) return toast.error("Choose a location and photo first.");
+    if (!user || !loc || !file) return void toast.error("Choose a location and photo first.");
     setBusy(true);
     let placeId: string | null = null;
     let path: string | null = null;

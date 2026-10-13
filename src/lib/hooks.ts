@@ -28,7 +28,7 @@ export function useGeolocation() {
   const [pos, setPos] = useState<[number, number] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const request = () => {
-    if (!navigator.geolocation) return setError("Geolocation not supported");
+    if (!navigator.geolocation) return void setError("Geolocation not supported");
     navigator.geolocation.getCurrentPosition(
       (p) => {
         setPos([p.coords.latitude, p.coords.longitude]);
@@ -38,6 +38,6 @@ export function useGeolocation() {
       { enableHighAccuracy: true, timeout: 15000 },
     );
   };
-  useEffect(request, []);
+  useEffect(() => request(), []);
   return { pos, error, request };
 }
