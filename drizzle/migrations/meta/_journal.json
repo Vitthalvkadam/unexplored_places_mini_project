@@ -8,6 +8,13 @@
       "when": 1791888846865,
       "tag": "0000_hiddentrail_schema",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1791888873256,
+      "tag": "0001_place_photos_policies",
+      "breakpoints": true
     }
   ]
 }
