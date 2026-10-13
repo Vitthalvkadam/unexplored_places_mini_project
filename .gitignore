@@ -8,6 +8,11 @@ pnpm-debug.log*
 lerna-debug.log*
 
 .env
+supabase/
+# Supabase configuration
+supabase/.env
+supabase/.env.*
+
 
 
 node_modules
